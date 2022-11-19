@@ -1,7 +1,6 @@
 import { GetServerSideProps } from "next";
 
 import prismaClient from "@/lib/prisma";
-import { Example } from "@/types/exampleTypes";
 
 const createSitemap = (
   pageUrls: string[]
@@ -24,9 +23,7 @@ const createSitemap = (
 
 export const getServerSideProps: GetServerSideProps = async ({ res }) => {
   const examples = await prismaClient.example.findMany();
-  const examplePageUrls = examples.map(
-    (example: Example) => `example/${example.slug}`
-  );
+  const examplePageUrls = examples.map((example) => `example/${example.slug}`);
 
   const pageUrls = [
     "",

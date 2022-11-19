@@ -1,34 +1,33 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Bolierplate for NextJs
 
-## Getting Started
+- **Framework**: [NextJs](https://nextjs.org/)
+- **Database**: [Supabase](https://supabase.com)
+- **ORM**: [Prisma](https://prisma.io/)
+- **Styling**: [TailwindCSS](https://tailwindcss.com/)
+- **Deployment**: [Vercel](https://vercel.com)
 
-First, run the development server:
+## Ready for Start
 
-```bash
-npm run dev
-# or
-yarn dev
-```
+First - To run your own server, copy '.env.example' file to '.env' and update environment
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- .env > NEXT_PUBLIC_BASE_URL (Website url)
+- .env > DATABASE_URL (DB url)
+- .env > NEXT_PUBLIC_UPDATE_PAGE_DATE (Sitemap lastmod - whenever you add pages)
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+Second - Update url at 'robots.txt'
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+- public > robots.txt > Sitemap
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+Third - Update your 'sitemap.xml.tsx'
 
-## Learn More
+- pages > sitemap.xml.tsx > pageUrls
 
-To learn more about Next.js, take a look at the following resources:
+## Overview
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+- `lib/prisma.ts` - Get Prisma client.
+- `pages/*` - All other static pages.
+- `pages/api/*` - [API Routes](https://nextjs.org/docs/api-routes/introduction)
+- `pages/sitemap.xml.tsx` - Automatically generated sitemap.
+- `prisma/*` - Prisma schema, which uses a Supabase PostgreSQL database.
+- `public/*` - Static assets including fonts and images.
+- `styles/globals.css` - Global styles using TailwindCSS.

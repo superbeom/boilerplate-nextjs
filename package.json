@@ -7,10 +7,16 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "clear": "rm -rf .next"
+    "clear": "rm -rf .next",
+    "prisma-init": "npx prisma init",
+    "prisma-push": "npx prisma db push",
+    "prisma-studio": "npx prisma studio",
+    "prisma-generate": "npx prisma generate"
   },
   "dependencies": {
+    "@prisma/client": "^4.6.1",
     "next": "13.0.4",
+    "prisma": "^4.6.1",
     "react": "18.2.0",
     "react-dom": "18.2.0"
   },

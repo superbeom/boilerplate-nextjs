@@ -23,7 +23,7 @@ const App = ({ Component, pageProps }: AppProps) => {
 
   return (
     <div
-      className={`${theme === DARK ? "dark" : ""} bg-background text-content`}
+      className={`${theme === LIGHT ? "light" : "dark"} bg-background text-content`}
     >
       <Head>
         <title>Boilerplate</title>

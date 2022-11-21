@@ -5,6 +5,7 @@ import type { AppProps } from "next/app";
 import Head from "next/head";
 
 import useStore from "@/store";
+import useDebounce from "@/hooks/useDebounce";
 
 import { lightTheme, darkTheme } from "@/constants/themes";
 import { THEME, LIGHT } from "@/constants/strings";
@@ -12,10 +13,10 @@ import { THEME, LIGHT } from "@/constants/strings";
 const App = ({ Component, pageProps }: AppProps) => {
   const { updateTheme } = useStore();
 
-  const preLoad = () => {
+  const preLoad = useDebounce(() => {
     const localTheme = localStorage.getItem(THEME) ?? LIGHT;
     updateTheme(localTheme === LIGHT ? lightTheme : darkTheme);
-  };
+  });
 
   useEffect(() => {
     preLoad();

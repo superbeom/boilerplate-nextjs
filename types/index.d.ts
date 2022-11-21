@@ -1,6 +1,3 @@
-export interface Theme {
+export interface Page {
   title: string;
-  primaryColor: string;
-  bgColor: string;
-  textColor: string;
 }

@@ -1,16 +1,13 @@
 import create from "zustand";
 
-import { Theme } from "@/types";
-import { lightTheme } from "@/constants/themes";
-
 interface StoreState {
-  theme: Theme;
-  updateTheme: (theme: Theme) => void;
+  theme: string;
+  updateTheme: (theme: string) => void;
 }
 
 const useStore = create<StoreState>((set) => ({
-  theme: lightTheme,
-  updateTheme: (newTheme: Theme) => set(() => ({ theme: newTheme })),
+  theme: "light",
+  updateTheme: (newTheme: string) => set(() => ({ theme: newTheme })),
 }));
 
 export default useStore;

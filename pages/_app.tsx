@@ -7,15 +7,14 @@ import Head from "next/head";
 import useStore from "@/store";
 import useDebounce from "@/hooks/useDebounce";
 
-import { lightTheme, darkTheme } from "@/constants/themes";
-import { THEME, LIGHT } from "@/constants/strings";
+import { THEME, LIGHT, DARK } from "@/constants/strings";
 
 const App = ({ Component, pageProps }: AppProps) => {
-  const { updateTheme } = useStore();
+  const { theme, updateTheme } = useStore();
 
   const preLoad = useDebounce(() => {
     const localTheme = localStorage.getItem(THEME) ?? LIGHT;
-    updateTheme(localTheme === LIGHT ? lightTheme : darkTheme);
+    updateTheme(localTheme === LIGHT ? LIGHT : DARK);
   });
 
   useEffect(() => {
@@ -23,7 +22,9 @@ const App = ({ Component, pageProps }: AppProps) => {
   }, []);
 
   return (
-    <>
+    <div
+      className={`${theme === DARK ? "dark" : ""} bg-background text-content`}
+    >
       <Head>
         <title>Boilerplate</title>
         <meta name="description" content="This is description" />
@@ -37,7 +38,7 @@ const App = ({ Component, pageProps }: AppProps) => {
       </main>
 
       <footer></footer>
-    </>
+    </div>
   );
 };
 

@@ -3,6 +3,7 @@
 - **Framework**: [NextJs](https://nextjs.org/)
 - **Database**: [Supabase](https://supabase.com)
 - **ORM**: [Prisma](https://prisma.io/)
+- **State**: [Zustand](https://github.com/pmndrs/zustand)
 - **Styling**: [TailwindCSS](https://tailwindcss.com/)
 - **Deployment**: [Vercel](https://vercel.com)
 
@@ -24,10 +25,14 @@ Third - Update your 'sitemap.xml.tsx'
 
 ## Overview
 
+- `constants/*` - Theme and strings.
+- `hooks/*` - Hooks.
 - `lib/prisma.ts` - Get Prisma client.
 - `pages/*` - All other static pages.
 - `pages/api/*` - [API Routes](https://nextjs.org/docs/api-routes/introduction)
 - `pages/sitemap.xml.tsx` - Automatically generated sitemap.
 - `prisma/*` - Prisma schema, which uses a Supabase PostgreSQL database.
 - `public/*` - Static assets including fonts and images.
+- `store/*` - Manage states.
 - `styles/globals.css` - Global styles using TailwindCSS.
+- `types/*` - Define types.

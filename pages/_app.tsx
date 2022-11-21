@@ -6,10 +6,10 @@ import Head from "next/head";
 
 import useStore from "@/store";
 
-import { lightTheme, darkTheme } from "@/constants/colors";
+import { lightTheme, darkTheme } from "@/constants/themes";
 import { THEME, LIGHT } from "@/constants/strings";
 
-export default function App({ Component, pageProps }: AppProps) {
+const App = ({ Component, pageProps }: AppProps) => {
   const { updateTheme } = useStore();
 
   const preLoad = () => {
@@ -38,4 +38,6 @@ export default function App({ Component, pageProps }: AppProps) {
       <footer></footer>
     </>
   );
-}
+};
+
+export default App;

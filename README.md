@@ -1,7 +1,7 @@
 # Bolierplate for NextJs
 
 - **Framework**: [NextJs](https://nextjs.org/)
-- **Database**: [Supabase](https://supabase.com)
+- **Database**: [Supabase with PostgreSQL](https://supabase.com)
 - **ORM**: [Prisma](https://prisma.io/)
 - **State**: [Zustand](https://github.com/pmndrs/zustand)
 - **Styling**: [TailwindCSS](https://tailwindcss.com/)

@@ -8,6 +8,49 @@
 
 ## Ready for Start
 
+### 1. Install packages
+
+- package.json > project name 수정
+- packages 설치
+
+```
+$ yarn install
+```
+
+### 2. Set up Prisma & Connect PostgreSQL DB
+
+```
+$ npx prisma init
+```
+
+- .env > 'DATABASE_URL' 설정
+
+### 3. Create DB schema with Prisma
+
+- prismaFolder/schema.prisma > schema 내용 복사
+- prisma/schema.prisma에 붙여 넣기
+- prismaFolder 폴더 삭제
+
+### 4. Create the tables in DB
+
+```
+$ yarn db-push (npx prisma db push)
+```
+
+#### DB interface
+
+```
+$ yarn studio (npx prisma studio)
+```
+
+### 5. Generate Prisma Client
+
+```
+$ yarn generate (npx prisma generate)
+```
+
+
+
 First - To run your own server, copy '.env.example' file to '.env' and update environment
 
 - .env > NEXT_PUBLIC_BASE_URL (Website url)
